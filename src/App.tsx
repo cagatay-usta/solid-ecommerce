@@ -1,16 +1,22 @@
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import { Outlet } from 'react-router-dom';
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import { ThemeProvider } from "@mui/material";
+import { theme } from "./style/theme";
 
 function App() {
   return (
     <>
-app
-<Outlet />
+      <ThemeProvider theme={theme}>
+        <Navbar />
+        app
+        <Outlet />
+      </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
