@@ -1,11 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { styled } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 
 /* TODO:
   add navlink styled component
   style navbar
-  add styled component theme??
 
 */
 
@@ -14,7 +12,7 @@ const NavContainer = styled("header")`
   justify-content: space-evenly;
   width: 100%;
   gap: 1rem;
-  color: ${(props) => props.color};
+  color: ${(props) => props.theme.palette.secondary.main};
 `;
 
 const NavLinksContainer = styled("div")`
@@ -27,11 +25,10 @@ const NavLinksContainer = styled("div")`
 const Logo = styled("div")``;
 
 function Navbar() {
-  const theme = useTheme();
 
   return (
     <>
-      <NavContainer color={theme.palette.primary.main}>
+      <NavContainer>
         <NavLinksContainer>
           <div>Collection</div>
           <div>Clothing</div>
