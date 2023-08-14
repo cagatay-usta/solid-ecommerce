@@ -4,6 +4,7 @@ import { styled } from "@mui/material";
 /* TODO:
   add navlink styled component
   style navbar
+  add search and cart icons
 
 */
 
@@ -21,7 +22,6 @@ const NavLinksContainer = styled("div")`
   width: 100%;
   gap: 1rem;
 `;
-
 const Logo = styled("div")``;
 
 function Navbar() {
