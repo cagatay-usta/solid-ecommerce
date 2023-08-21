@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home.tsx";
 import About from "./Pages/About.tsx";
 import NotFound from "./Pages/NotFound.tsx";
+import "./style/global.css"
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
