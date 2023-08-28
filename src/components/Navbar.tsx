@@ -2,10 +2,10 @@ import { NavLink } from "react-router-dom";
 import { styled } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 
 /* TODO:
-  alternative cart icon?
-
+  add badges
 */
 
 const NavContainer = styled("header")`
@@ -65,6 +65,31 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
+const CartIconContainer = styled("div")`
+  overflow: hidden;
+  display: flex;
+
+  svg {
+    transition: transform 0.3s ease,
+      opacity 0.1s cubic-bezier(0.01, 0.97, 0.96, 0.04);
+  }
+  svg:last-child {
+    transform: translateX(-200%);
+    opacity: 0;
+  }
+  svg:first-child {
+    transform: translateX(50%);
+  }
+  &:hover svg:last-child {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+  &:hover svg:first-child {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+`;
+
 function Navbar() {
   return (
     <>
@@ -78,10 +103,15 @@ function Navbar() {
         <NavLinksContainer>
           <StyledNavLink to={"/about"}>about</StyledNavLink>
           <StyledNavLink to={"/search"}>
-            search <SearchIcon />
+            search
+            <SearchIcon />
           </StyledNavLink>
           <StyledNavLink to={"/cart"}>
-            cart <ShoppingCartIcon />
+            <CartIconContainer>
+              cart
+              <ShoppingCartIcon />
+              <ShoppingCartCheckoutIcon />
+            </CartIconContainer>
           </StyledNavLink>
         </NavLinksContainer>
       </NavContainer>
