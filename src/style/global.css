@@ -24,3 +24,12 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 /* Reset */
+
+html {
+  height: 110vh;
+}
+
+/* margin for the fixed navbar */
+body {
+  margin-top: 8rem;
+}

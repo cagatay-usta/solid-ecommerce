@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
-import { styled } from "@mui/material";
+import { Badge, styled } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 
 /* TODO:
-  add badges
+  add badge functionality 
+  add mobile hamburger icon
 */
 
 const NavContainer = styled("header")`
@@ -13,12 +14,23 @@ const NavContainer = styled("header")`
   justify-content: space-evenly;
   align-items: center;
   width: 100vw;
+  height: 8rem;
   gap: 1rem;
   color: ${(props) => props.theme.palette.primary.main};
   font-family: "Poppins", sans-serif;
   padding: 1rem;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background: ${(props) => props.theme.palette.gray.white};
+
+  position: fixed;
+  top: 0;
+  margin-bottom: 10rem;
+
+  @media screen and (max-width: 720px) {
+    & > div > :not(.icon-container) {
+      display: none;
+    }
+  }
 `;
 
 const NavLinksContainer = styled("div")`
@@ -102,16 +114,18 @@ function Navbar() {
         <Logo to={"/home"}>SOLID</Logo>
         <NavLinksContainer>
           <StyledNavLink to={"/about"}>about</StyledNavLink>
-          <StyledNavLink to={"/search"}>
+          <StyledNavLink to={"/search"} className="icon-container">
             search
             <SearchIcon />
           </StyledNavLink>
-          <StyledNavLink to={"/cart"}>
-            <CartIconContainer>
-              cart
-              <ShoppingCartIcon />
-              <ShoppingCartCheckoutIcon />
-            </CartIconContainer>
+          <StyledNavLink to={"/cart"} className="icon-container">
+            <Badge badgeContent="1" color="secondary">
+              <CartIconContainer>
+                cart
+                <ShoppingCartIcon />
+                <ShoppingCartCheckoutIcon />
+              </CartIconContainer>
+            </Badge>
           </StyledNavLink>
         </NavLinksContainer>
       </NavContainer>
