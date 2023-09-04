@@ -102,7 +102,11 @@ const CartIconContainer = styled("div")`
   }
 `;
 
-function Navbar() {
+type NavbarProps = {
+  itemCount: number;
+};
+
+function Navbar({ itemCount }: NavbarProps) {
   return (
     <>
       <NavContainer>
@@ -119,7 +123,7 @@ function Navbar() {
             <SearchIcon />
           </StyledNavLink>
           <StyledNavLink to={"/cart"} className="icon-container">
-            <Badge badgeContent="1" color="secondary">
+            <Badge badgeContent={itemCount} color="secondary">
               <CartIconContainer>
                 cart
                 <ShoppingCartIcon />

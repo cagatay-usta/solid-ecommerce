@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Navbar />
+        <Navbar itemCount={1} />
         app
         <Outlet />
       </ThemeProvider>
