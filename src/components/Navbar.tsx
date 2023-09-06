@@ -112,7 +112,7 @@ function Navbar({ itemCount }: NavbarProps) {
       <NavContainer>
         <NavLinksContainer>
           <StyledNavLink to={"/collection"}>collection</StyledNavLink>
-          <StyledNavLink to={"/clothing"}>clothing</StyledNavLink>
+          <StyledNavLink to={"/collection/clothing"}>clothing</StyledNavLink>
           <StyledNavLink to={"/electronics"}>electronics</StyledNavLink>
         </NavLinksContainer>
         <Logo to={"/home"}>SOLID</Logo>

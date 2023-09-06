@@ -19,8 +19,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/" element={<App />}>
           <Route path="home" element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="collection" element={<Collection />} />
-          <Route path="clothing" element={<Clothing />} />
+          <Route path="collection" element={<Collection />}>
+            <Route path="clothing" element={<Clothing />} />{" "}
+          </Route>
           <Route path="cart" element={<Cart />} />
           <Route path="product" element={<Product />} />
           <Route path="checkout" element={<Checkout />} />
